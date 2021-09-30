@@ -13,13 +13,22 @@
                   isDark
                   is-range />
             </div>
-            <b-button id="show-btn" class="mt-3" variant="outline-warning" @click="showModal">Order</b-button>
+            <b-button
+              id="show-btn"
+              class="mt-3"
+              variant="outline-warning"
+              @click="() => {
+                  addItem(product.id)
+                  hideModal()
+                  }">Order</b-button>
         </b-modal>
     </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
+    props: ['product'],
     methods: {
         showModal(){
             this.$refs['my-modal'].show()
@@ -29,7 +38,8 @@ export default {
         },
         toggleModal(){
             this.$refs['my-modal'].toggle('#toggle-btn')
-        }
+        },
+        ...mapMutations(['addItem'])
     }
 }
 </script>

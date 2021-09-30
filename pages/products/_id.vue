@@ -6,7 +6,7 @@
           <div class="info-box">
               <h1>{{products.title}}</h1>
               <p class="snippet">{{products.snippet}}</p>
-              <rent-modal/>
+              <rent-modal :product="products"/>
           </div>
       </div>
       <div class="whats-included-container">
