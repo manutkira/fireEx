@@ -14,7 +14,7 @@ export default {
         }
     },
     async fetch(){
-        this.reviewer = await fetch('https://randomuser.me/api/?results=5').then(res =>
+        this.reviewer = await fetch('https://randomuser.me/api/?results=10').then(res =>
             res.json()
         )
     }

@@ -6,6 +6,7 @@
           <div class="info-box">
               <h1>{{products.title}}</h1>
               <p class="snippet">{{products.snippet}}</p>
+              <rent-modal/>
           </div>
       </div>
       <div class="whats-included-container">
@@ -40,8 +41,11 @@
 </template>
 
 <script>
+import RentModal from '~/components/RentModal.vue'
 export default {
-    computed: {products(){
+  components: { RentModal },
+    computed: {
+        products(){
             return this.$store.getters.getProductId(this.$route.params.id)
         }
     }
